@@ -2,11 +2,6 @@
 name: site-speed-audit
 description: "Full website speed audit - Core Web Vitals (LCP, INP, CLS, FCP, TBT, TTFB) and 69 checks across server location vs. the visitors' country, rendering, JavaScript, third parties, images, video, fonts, caching, CDN, navigation, back/forward cache, interaction, animation cost and monitoring. Built for sites made with AI builders (Lovable, Claude, Base44, Bolt, v0, Replit, Cursor) and also covers WordPress. Measures what actually slows the page, ranks fixes by seconds saved, sorts them into Critical / Should improve / Optional, and gives a ready-to-paste prompt per fix. Scan only: it produces a report and never changes the site, its code or its server. Use when asked to check, audit or speed up a site, to explain a PageSpeed result, or to ask why a site is slow for its visitors."
 license: MIT
-metadata:
-  display_name: "שיפור מהירות האתר"
-  display_name_en: "Site Speed Audit"
-  display_description: "בדיקת מהירות מלאה לאתר: Core Web Vitals ו-69 בדיקות, דירוג תיקונים לפי שניות שנחסכות ופרומפט מוכן לכל תיקון."
-  display_description_en: "Full website speed audit: Core Web Vitals and 69 checks, fixes ranked by seconds saved, with a ready-to-paste prompt per fix."
 ---
 
 # Site Speed Audit
