@@ -101,8 +101,14 @@ CODE_NAMES = {"TLV": "Tel Aviv", "HFA": "Haifa", "FRA": "Frankfurt", "AMS": "Ams
               "HND": "Tokyo", "NRT": "Tokyo", "ICN": "Seoul", "SYD": "Sydney", "ATH": "Athens", "LCA": "Larnaca"}
 import ipaddress
 # Anycast CDN ranges (same IP answers from many cities): Cloudflare, Vercel
-ANYCAST = [ipaddress.ip_network(n) for n in ("104.16.0.0/13", "104.24.0.0/14", "172.64.0.0/13", "188.114.96.0/20",
-                                              "162.158.0.0/15", "76.76.21.0/24", "2606:4700::/32")]
+# The published CIDR ranges are kept in assets/anycast-ranges.json (data only, no addresses are contacted).
+import os as _os
+_RANGES_FILE = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "assets", "anycast-ranges.json")
+try:
+    with open(_RANGES_FILE, encoding="utf-8") as _f:
+        ANYCAST = [ipaddress.ip_network(n) for n in json.load(_f)["ranges"]]
+except (OSError, ValueError, KeyError):
+    ANYCAST = []
 
 
 def code_name(c):

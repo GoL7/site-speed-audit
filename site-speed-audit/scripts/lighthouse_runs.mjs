@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 // Repeatable Lighthouse lab runs with a median, plus an optional performance budget check.
 // Usage:
-//   node lighthouse_runs.mjs https://example.com/                 # 3 mobile runs
-//   node lighthouse_runs.mjs https://example.com/ --desktop --runs 5
-//   node lighthouse_runs.mjs https://example.com/ --budget ../assets/budget.json
+//   node scripts/lighthouse_runs.mjs https://example.com/                 # 3 mobile runs (run from the skill folder)
+//   node scripts/lighthouse_runs.mjs https://example.com/ --desktop --runs 5
+//   node scripts/lighthouse_runs.mjs https://example.com/ --budget assets/budget.json
 // Needs Node 18+ and a Chrome/Chromium. Set CHROME_PATH if Chrome isn't found automatically.
 // Note: the run happens from THIS machine's location - it does not show the distance cost for
 // visitors in another country (see references/server-location.md).
