@@ -12,13 +12,18 @@
   const r = await fetch(location.href, { credentials: 'omit', cache: 'no-store' });
   const raw = await r.text();
   const hdr = Object.fromEntries([...r.headers]);
-  const bodyText = raw.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, '')
-    .replace(/<head[\s\S]*?<\/head>/, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  // parse the raw HTML without executing it (DOMParser never runs scripts)
+  const doc = new DOMParser().parseFromString(raw, 'text/html');
+  const bodyClone = doc.body ? doc.body.cloneNode(true) : null;
+  if (bodyClone) bodyClone.querySelectorAll('script, style, template').forEach(el => el.remove());
+  const bodyText = (bodyClone ? bodyClone.textContent : '').replace(/\s+/g, ' ').trim();
   const emptyShell = /<div id="(root|app|__next)"><\/div>/.test(raw) || bodyText.length < 200;
 
   // ---- 2. Platform detection ----
   // look only at tag attributes and script code, not at the visible text (a site may just mention a builder)
-  const tech = (raw.match(/<(script|link|img|meta|iframe|source)\b[^>]*>/gi) || []).join(' ') + (raw.match(/<script[^>]*>[\s\S]*?<\/script>/gi) || []).join(' ') + performance.getEntriesByType('resource').map(e => e.name).join(' ');
+  const tech = [...doc.querySelectorAll('script, link, img, meta, iframe, source')].map(el => el.cloneNode(false).outerHTML).join(' ') + ' ' +
+    [...doc.querySelectorAll('script')].map(el => el.textContent).join(' ') + ' ' +
+    performance.getEntriesByType('resource').map(e => e.name).join(' ');
   const sig = [
     ['Lovable', /gpt-engineer-file-uploads|lovable-uploads|lovable\.app|\/~flock\.js|__l5e|lovable-tagger/i],
     ['Base44', /base44\.(app|com)\/api|@base44|base44-app|cdn\.base44/i],
