@@ -1,0 +1,10 @@
+{
+  "_note": "Starting budget for a homepage on mobile Lighthouse. Tighten it to the numbers reached after the fixes.",
+  "lcp_ms": 2500,
+  "fcp_ms": 1800,
+  "tbt_ms": 200,
+  "cls": 0.1,
+  "total_kb": 1000,
+  "js_kb": 150,
+  "min_score": 90
+}
