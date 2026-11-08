@@ -1,0 +1,12 @@
+{
+  "_note": "Published anycast CDN ranges (Cloudflare, Vercel). Used only to label a resolved IP as anycast; never contacted.",
+  "ranges": [
+    "104.16.0.0/13",
+    "104.24.0.0/14",
+    "172.64.0.0/13",
+    "188.114.96.0/20",
+    "162.158.0.0/15",
+    "76.76.21.0/24",
+    "2606:4700::/32"
+  ]
+}
