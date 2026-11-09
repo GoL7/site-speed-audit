@@ -2,20 +2,20 @@ name: Release
 on:
   push:
     tags: ['v*']
-  release:
-    types: [published]
   workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: write
+  attestations: write
 
 jobs:
   release:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      id-token: write
-      attestations: write
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/attest-build-provenance@v4
-        with:
-          subject-path: |
-            **/SKILL.md
+    uses: skills-il/release-workflow/.github/workflows/release.yml@v1
+    with:
+      subject_path: |
+        **/SKILL.md
+        **/SKILL_HE.md
+        **/scripts/**
+        **/assets/**
+        **/references/**
