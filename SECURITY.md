@@ -9,7 +9,7 @@ Only the latest release is supported.
 Please **do not open a public issue** for security problems.
 
 Report privately through GitHub: **Security → Report a vulnerability** on this repository
-(https://github.com/shaymolina242-art/site-speed-audit/security/advisories/new).
+(https://github.com/GoL7/site-speed-audit/security/advisories/new).
 
 You will get a reply within 7 days.
 
