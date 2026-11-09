@@ -1,8 +1,8 @@
 # Site Speed Audit · שיפור מהירות האתר
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Release](https://img.shields.io/github/v/release/shaymolina242-art/site-speed-audit)](https://github.com/shaymolina242-art/site-speed-audit/releases)
-[![CodeQL](https://github.com/shaymolina242-art/site-speed-audit/actions/workflows/codeql/badge.svg)](https://github.com/shaymolina242-art/site-speed-audit/security/code-scanning)
+[![Release](https://img.shields.io/github/v/release/GoL7/site-speed-audit)](https://github.com/GoL7/site-speed-audit/releases)
+[![CodeQL](https://github.com/GoL7/site-speed-audit/actions/workflows/codeql/badge.svg)](https://github.com/GoL7/site-speed-audit/security/code-scanning)
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-SKILL.md-blue)](https://agentskills.io)
 
 An [Agent Skill](https://agentskills.io) that runs a full website speed audit: Core Web Vitals (LCP, INP, CLS, FCP, TBT, TTFB) plus **69 checks**, ranks every fix by the seconds it saves, and gives a ready-to-paste prompt for each fix.
@@ -41,7 +41,7 @@ Built for sites made with AI builders (Lovable, Claude, Base44, Bolt, v0, Replit
 
 **Any agent (skills CLI):**
 ```bash
-npx skills add shaymolina242-art/site-speed-audit
+npx skills add GoL7/site-speed-audit
 ```
 
 **Claude Code:** copy the `site-speed-audit/` folder into `~/.claude/skills/` (or `.claude/skills/` in your project).
@@ -88,7 +88,7 @@ site-speed-audit/
 
 - No secrets, API keys or tokens are stored in this repository.
 - Scripts only send read requests to the site being audited and to public measurement services (PageSpeed Insights, Globalping).
-- Releases are signed with [Sigstore build provenance](https://github.com/shaymolina242-art/site-speed-audit/attestations) by GitHub Actions.
+- Releases are signed with [Sigstore build provenance](https://github.com/GoL7/site-speed-audit/attestations) by GitHub Actions.
 - Code scanning (CodeQL), secret scanning and push protection are enabled.
 - Report a vulnerability: see [SECURITY.md](SECURITY.md).
 
@@ -112,4 +112,4 @@ site-speed-audit/
 
 ## License
 
-[MIT](LICENSE) © shaymolina242-art
+[MIT](LICENSE) © GoL7
